@@ -1,0 +1,344 @@
+/* ------------ Reset ------------ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+  background: linear-gradient(135deg, #f4f4f4, #e0e0e0);
+  color: #222;
+  transition: background 0.3s ease, color 0.3s ease;
+  padding-top: 70px;
+  line-height: 1.6;
+}
+
+body.dark {
+  background: linear-gradient(135deg, #1e1e1e, #121212);
+  color: #eee;
+}
+
+/* ------------ Navbar ------------ */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #333;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  z-index: 1000;
+  transition: background 0.3s ease;
+}
+
+body.dark nav {
+  background: #222;
+}
+
+nav .logo {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+nav > div {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav a:hover,
+nav a:focus {
+  color: #00bcd4;
+  outline: 2px solid #00bcd4;
+  outline-offset: 2px;
+}
+
+.toggle-btn {
+  cursor: pointer;
+  background: #00bcd4;
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+.toggle-btn:hover,
+.toggle-btn:focus {
+  background: #0097a7;
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+body.dark .toggle-btn {
+  background: #0097a7;
+}
+
+body.dark .toggle-btn:hover,
+body.dark .toggle-btn:focus {
+  background: #00bcd4;
+}
+
+/* ------------ Sections (General) ------------ */
+section {
+  padding: 80px 50px;
+  min-height: calc(100vh - 120px);
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center; 
+}
+
+section.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+h1, h2 {
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: inherit;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+p {
+  font-size: 1rem;
+  max-width: 800px;
+  margin: 0 auto 20px;
+}
+
+/* ------------ Hero ------------ */
+#hero {
+  background: linear-gradient(135deg, rgba(0, 188, 212, 0.1), rgba(0, 188, 212, 0.05));
+  border-radius: 20px;
+  margin: 20px;
+  padding: 60px 40px;
+}
+
+body.dark #hero {
+  background: linear-gradient(135deg, rgba(0, 188, 212, 0.2), rgba(0, 188, 212, 0.1));
+}
+
+/* ------------ About ------------ */
+#about img {
+  display: block;
+  margin: 20px auto;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #00bcd4;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#about img:hover {
+  transform: scale(1.05);
+  border-color: #0097a7;
+}
+
+body.dark #about img {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* ------------ Skills (Centered) ------------ */
+#skills {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+
+#skills p {
+  margin-bottom: 40px;
+}
+
+.skills-container {
+  width: 100%;
+  text-align: center; /* Centers all child elements */
+}
+
+.skill {
+  margin: 25px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers vertically within skill */
+  width: 80%; /* Slightly narrower for centering effect */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.skill-name {
+  margin-bottom: 10px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-align: center; /* Explicit center for names */
+  width: 100%;
+}
+
+.skill-bar {
+  width: 100%; /* Full width within centered container */
+  background: #ddd;
+  border-radius: 25px;
+  overflow: hidden;
+  height: 15px;
+}
+
+body.dark .skill-bar {
+  background: #444;
+}
+
+.skill-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #00bcd4, #0097a7);
+  width: 0;
+  border-radius: 25px;
+  transition: width 1.5s ease-out;
+}
+
+body.dark .skill-fill {
+  background: linear-gradient(90deg, #00bcd4, #00e5ff);
+}
+
+/* ------------ Projects (Grid Layout) ------------ */
+#projects {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+#projects p {
+  margin-bottom: 40px;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  width: 100%;
+}
+
+.project {
+  background: #f9f9f9;
+  padding: 30px;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(30px);
+  border-left: 4px solid #00bcd4;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.project.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+body.dark .project {
+  background: #2a2a2a;
+  border-left-color: #00bcd4;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.project:hover,
+.project:focus-within {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+body.dark .project:hover,
+body.dark .project:focus-within {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.project h3 {
+  margin-bottom: 15px;
+  color: #333;
+  font-size: 1.3rem;
+}
+
+body.dark .project h3 {
+  color: #eee;
+}
+
+.project a {
+  text-decoration: none;
+  color: #00bcd4;
+  font-weight: bold;
+  transition: color 0.3s ease;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.project a:hover,
+.project a:focus {
+  color: #0097a7;
+  outline: 2px solid #00bcd4;
+  outline-offset: 2px;
+}
+
+body.dark .project a {
+  color: #00e5ff;
+}
+
+/* ------------ Contact ------------ */
+#contact {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+#contact p {
+  margin-bottom: 40px;
+}
+
+.contact-info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.contact-info a {
+  width: 20%;
+ 
+  margin: 30px 10px;
+  color: #00bcd4;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px solid transparent;
+}
+
+.contact-info a:hover,
+.contact-info a:focus {
+  color: #0097a7;
+  background: rgba(0, 188, 212, 0.1);
+  border-color: #00bcd4
