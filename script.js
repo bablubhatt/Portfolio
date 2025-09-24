@@ -105,15 +105,41 @@ document.addEventListener('DOMContentLoaded', () => {
   // Initial animations for elements already in view (e.g., on short pages or slow load)
   if (!prefersReducedMotion) {
     // Skills
-    skillBars.forEach((bar, index) => {
-      if (bar.getBoundingClientRect().top < window.innerHeight && !bar.classList.contains('animated')) {
-        setTimeout(() => {
-          bar.style.width = bar.dataset.width;
-          bar.classList.add('animated');
-        }, index * 100); // Slight stagger for initial load
+   // Skills Progress Bar Animation (Add this inside DOMContentLoaded)
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+const skillBars = document.querySelectorAll('.progress-bar');
+if (skillBars.length > 0 && !prefersReducedMotion) {
+  const skillObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const bar = entry.target;
+      if (entry.isIntersecting && !bar.classList.contains('animated')) {
+        // Animate to target percent
+        const targetPercent = bar.dataset.percent;
+        bar.style.width = targetPercent + '%';
+        bar.classList.add('animated'); // Prevent re-animation
+        // Optional: Update ARIA for screen readers
+        const progress = bar.parentElement;
+        progress.setAttribute('aria-valuenow', targetPercent);
       }
     });
+  }, {
+    threshold: 0.5, // Trigger when 50% of section is visible
+    rootMargin: '0px 0px -100px 0px' // Start animation 100px before bottom
+  });
 
+  skillBars.forEach(bar => skillObserver.observe(bar));
+
+  // Initial animation if already in view
+  skillBars.forEach(bar => {
+    if (bar.getBoundingClientRect().top < window.innerHeight && !bar.classList.contains('animated')) {
+      const targetPercent = bar.dataset.percent;
+      bar.style.width = targetPercent + '%';
+      bar.classList.add('animated');
+      bar.parentElement.setAttribute('aria-valuenow', targetPercent);
+    }
+  });
+}
     // Sections
     sections.forEach(section => {
       if (section.getBoundingClientRect().top < window.innerHeight) {
@@ -147,4 +173,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Console log for debugging (remove in production)
   console.log('Portfolio JS loaded successfully! 🚀');
+
+
+   // Path of your PDF file
+  const pdfPath = 'resume.pdf'; // yahan apni PDF ka actual path de
+
+  // Button 2 click
+  document.getElementById('resumeBtn').addEventListener('click', function(e){
+    e.preventDefault();
+    window.open(pdfPath, '_blank');
+  });
+   document.getElementById('resumeBtn1').addEventListener('click', function(e){
+    e.preventDefault();
+    window.open(pdfPath, '_blank');
+  });
 });
+
+

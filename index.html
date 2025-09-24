@@ -10,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <!-- Favicon (add your own image as favicon.ico or use a generator) -->
   <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
@@ -28,9 +29,28 @@
 
   <main>
     <!-- Hero Section -->
-    <section id="hero" aria-labelledby="main-title">
-      <h1 id="main-title">Welcome to My Portfolio</h1>
-      <p>I'm Vivek Bhatt, an MCA student passionate about web development. Let's build the future together!</p>
+   <section class="home">
+        <div class="home-content">
+            <h1>Hi, It's <span>Vivek</span></h1>
+            <h3 class="typing-text">I'm a <span></span></h3>
+            <p>“I’m a Front-End Engineer passionate about building clean, responsive, and user-friendly web interfaces. I specialize in turning ideas into interactive digital experiences using modern technologies like HTML, CSS, JavaScript, and frameworks such as React. My focus is on creating seamless designs with performance, accessibility, and scalability in mind.”</p>
+           <div class="social-icons">
+    <a href="https://www.linkedin.com/in/vivek-bhatt-38b1a7240/" target="_blank">
+        <i class="fa-brands fa-linkedin"></i>
+    </a>
+    <a href="https://github.com/bablubhatt" target="_blank">
+        <i class="fa-brands fa-github"></i>
+    </a>
+    <a href="https://x.com/bablubhatt22" target="_blank">
+        <i class="fa-brands fa-x-twitter"></i>
+    </a>
+    <a href="https://www.instagram.com/bablubhatt122/" target="_blank">
+        <i class="fa-brands fa-instagram"></i>
+    </a>
+</div>
+
+            <a href="#" id="resumeBtn" class="btn">Resume</a>
+        </div>
     </section>
 
     <!-- About Section -->
@@ -44,49 +64,48 @@
       <p>I'm always eager to collaborate on exciting projects—feel free to reach out!</p>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills">
-      <h2>My Skills</h2>
-      <p>Here's a snapshot of my technical proficiencies. These are based on my projects and self-assessments.</p>
-      <div class="skills-container">
-        <div class="skill">
-          <div class="skill-name">HTML</div>
-          <div class="skill-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="90" aria-label="HTML proficiency: 90%">
-            <div class="skill-fill" data-width="90%"></div>
-          </div>
-        </div>
-        <div class="skill">
-          <div class="skill-name">CSS</div>
-          <div class="skill-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="85" aria-label="CSS proficiency: 85%">
-            <div class="skill-fill" data-width="85%"></div>
-          </div>
-        </div>
-        <div class="skill">
-          <div class="skill-name">JavaScript</div>
-          <div class="skill-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="75" aria-label="JavaScript proficiency: 75%">
-            <div class="skill-fill" data-width="75%"></div>
-          </div>
-        </div>
-        <div class="skill">
-          <div class="skill-name">UI/UX</div>
-          <div class="skill-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="70" aria-label="UI/UX proficiency: 70%">
-            <div class="skill-fill" data-width="70%"></div>
-          </div>
-        </div>
-        <div class="skill">
-          <div class="skill-name">React</div>
-          <div class="skill-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="65" aria-label="React proficiency: 65%">
-            <div class="skill-fill" data-width="65%"></div>
-          </div>
-        </div>
-        <div class="skill">
-          <div class="skill-name">Next.js</div>
-          <div class="skill-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="60" aria-label="Next.js proficiency: 60%">
-            <div class="skill-fill" data-width="60%"></div>
-          </div>
-        </div>
+   <!-- Skills Section -->
+<section id="skills">
+  <h2>My Skills</h2>
+  <p>Here's a snapshot of my technical proficiencies. These bars represent my self-assessed expertise levels.</p>
+  <div class="skills-container">
+    <div class="skill">
+      <p class="skill-label">HTML <span class="skill-percent" aria-hidden="true">90%</span></p>
+      <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="90" aria-label="HTML proficiency: 90%">
+        <div class="progress-bar" data-percent="90"></div>
       </div>
-    </section>
+    </div>
+
+    <div class="skill">
+      <p class="skill-label">CSS <span class="skill-percent" aria-hidden="true">85%</span></p>
+      <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="85" aria-label="CSS proficiency: 85%">
+        <div class="progress-bar" data-percent="85"></div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <p class="skill-label">JavaScript <span class="skill-percent" aria-hidden="true">75%</span></p>
+      <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="75" aria-label="JavaScript proficiency: 75%">
+        <div class="progress-bar" data-percent="75"></div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <p class="skill-label">React <span class="skill-percent" aria-hidden="true">70%</span></p>
+      <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="70" aria-label="React proficiency: 70%">
+        <div class="progress-bar" data-percent="70"></div>
+      </div>
+    </div>
+    <!-- Add more skills if needed, e.g., Next.js -->
+    <div class="skill">
+      <p class="skill-label">Next.js <span class="skill-percent" aria-hidden="true">60%</span></p>
+      <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="60" aria-label="Next.js proficiency: 60%">
+        <div class="progress-bar" data-percent="60"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
     <!-- Projects Section -->
     <section id="projects">
@@ -103,10 +122,16 @@
           <p>A modern landing page for a fictional product, designed with HTML, CSS (including Flexbox and media queries), and subtle animations for better user engagement.</p>
           <a href="https://github.com/bhattvivek079/landing-page" target="_blank" rel="noopener noreferrer">View on GitHub</a>
         </div>
+         </div>
+        <div class="project">
+          <h4>Surya Group</h4>
+          <p>A modern Construction page for a fictional product, designed with HTML, CSS ,REACT AND JAVASCRIPT Based(including Flexbox and media queries), and subtle animations for better user engagement. Backend work by my friend MR.Suraj Singh</p>
+          <a href="https://www.suryagroup.us/" target="_blank" rel="noopener noreferrer">View on Surya Group</a>
+        </div>
         <div class="project">
           <h3>Personal Portfolio Website</h3>
           <p>This very site! A dynamic portfolio built with HTML5, CSS3, JavaScript, and dark mode toggle. Demonstrates skills in animations, responsiveness, and modern web standards.</p>
-          <a href="https://github.com/bhattvivek079/portfolio" target="_blank" rel="noopener noreferrer">View Source on GitHub</a>
+          <a href="https://bablubhatt.github.io/Portfolio/" target="_blank" rel="noopener noreferrer">View Source on GitHub</a>
         </div>
       </div>
     </section>
@@ -118,8 +143,8 @@
       <div class="contact-info">
         <a href="mailto:bhattvivek079@gmail.com">📧 bhattvivek079@gmail.com</a>
         <a href="tel:+918755351411">📞 +91 8755351411</a>
-        <a href="https://www.linkedin.com/in/vivek-bhatt-079" target="_blank" rel="noopener noreferrer">🔗 LinkedIn Profile</a>
-        <a href="resume.pdf" download class="resume-btn">📄 Download Resume</a>
+        <a href="https://www.linkedin.com/in/vivek-bhatt-38b1a7240/" target="_blank" rel="noopener noreferrer">🔗 LinkedIn Profile</a>
+        <a  id="resumeBtn1" download class="resume-btn">📄Resume</a>
       </div>
     </section>
   </main>
